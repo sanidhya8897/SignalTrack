@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SignalTrack Error Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page-title">SignalTrack Error Tracker</div>
+        <span class="aws-link">
+            Hosted at:
+            <a href="http://signaltrack-site.s3-website-us-east-2.amazonaws.com" class="link-btn" target="_blank">
+                signaltrack-site.s3-website-us-east-2.amazonaws.com
+            </a>
+        </span>
+
+        <!-- Login Form -->
+        <div id="login-section">
+            <label for="user-id-input">User ID:</label>
+            <input type="text" id="user-id-input" placeholder="Enter your User ID" autocomplete="username">
+            <button id="login-btn">Login</button>
+            <div class="error-message" id="login-error"></div>
+        </div>
+
+        <!-- Welcome & Query Section -->
+        <div id="welcome-section" style="display:none;">
+            <div class="success-message" id="welcome-msg"></div>
+            <button id="view-errors-btn">View My Errors</button>
+            <button id="logout-btn">Logout</button>
+        </div>
+
+        <!-- Results Table -->
+        <div id="results-section" style="display:none;">
+            <table id="errors-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Timestamp</th>
+                        <th>Service</th>
+                        <th>Error Type</th>
+                        <th>Stack Trace</th>
+                    </tr>
+                </thead>
+                <tbody id="errors-tbody"></tbody>
+            </table>
+            <div id="no-errors" style="margin-top:10px; color:#333;"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
