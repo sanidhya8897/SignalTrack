@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SignalTrack Error Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page-title">SignalTrack Error Tracker</div>
+
+        <!-- Login Form -->
+        <div id="login-section">
+            <label for="user-id-input">User ID:</label>
+            <input type="text" id="user-id-input" placeholder="Enter your User ID" autocomplete="username">
+            <button id="login-btn">Login</button>
+            <button id="show-register-btn">Register</button>
+            <div class="error-message" id="login-error"></div>
+        </div>
+
+        <!-- Register Form -->
+        <div id="register-section" style="display:none;">
+            <label for="register-user-id-input">New User ID:</label>
+            <input type="text" id="register-user-id-input" placeholder="Create a User ID" autocomplete="username">
+            <button id="register-btn">Submit</button>
+            <button id="cancel-register-btn">Cancel</button>
+            <div class="error-message" id="register-error"></div>
+            <div class="success-message" id="register-success"></div>
+        </div>
+
+        <!-- Welcome & Feature Section -->
+        <div id="welcome-section" style="display:none;">
+            <div class="success-message" id="welcome-msg"></div>
+            <button id="view-errors-btn">View My Errors</button>
+            <button id="goto-debug-btn">Debug Code Snippet</button>
+            <button id="aws-link-btn" onclick="window.location.href='http://signaltrack-site.s3-website-us-east-2.amazonaws.com'">Go to SignalTrack AWS Site</button>
+            <button id="logout-btn">Logout</button>
+        </div>
+
+        <!-- Results Table -->
+        <div id="results-section" style="display:none;">
+            <table id="errors-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Timestamp</th>
+                        <th>Service</th>
+                        <th>Error Type</th>
+                        <th>Stack Trace</th>
+                    </tr>
+                </thead>
+                <tbody id="errors-tbody"></tbody>
+            </table>
+            <div id="no-errors" style="margin-top:10px; color:#333;"></div>
+        </div>
+
+        <!-- Debugger Page -->
+        <div id="debug-section" style="display:none;">
+            <div class="debug-title">Code Snippet Debugger</div>
+            <label for="snippet-input">Paste your code snippet here:</label>
+            <textarea id="snippet-input" rows="7" placeholder="Paste your code..."></textarea>
+            <button id="submit-snippet-btn">Submit & Debug</button>
+            <button id="cancel-debug-btn">Cancel</button>
+            <div class="error-message" id="debug-error"></div>
+            <div class="success-message" id="debug-success"></div>
+            <pre id="backend-debug-result"></pre>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
