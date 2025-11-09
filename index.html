@@ -12,6 +12,12 @@
 
         <!-- Login Form -->
         <div id="login-section">
+            <div class="center-container">
+              <h2>Welcome, [UserID]!</h2>
+              <button class="main-btn" onclick="showEnterError()">Enter Error Code</button>
+              <button class="main-btn" onclick="showErrorList()">Error List</button>
+        </div>
+
             <label for="user-id-input">User ID:</label>
             <input type="text" id="user-id-input" placeholder="Enter your User ID" autocomplete="username">
             <button id="login-btn">Login</button>
@@ -32,6 +38,11 @@
         <!-- Welcome & Feature Section -->
         <div id="welcome-section" style="display:none;">
             <div class="success-message" id="welcome-msg"></div>
+            <div class="center-container">
+              <h2>Welcome, [UserID]!</h2>
+              <button class="main-btn" onclick="showEnterError()">Enter Error Code</button>
+              <button class="main-btn" onclick="showErrorList()">Error List</button>
+        </div>
             <button id="view-errors-btn">View My Errors</button>
             <button id="goto-debug-btn">Debug Code Snippet</button>
             <button id="aws-link-btn" onclick="window.location.href='http://signaltrack-site.s3-website-us-east-2.amazonaws.com'">Go to SignalTrack AWS Site</button>
@@ -70,3 +81,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
